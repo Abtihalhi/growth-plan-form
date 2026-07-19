@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة النمو لمشروعك</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#2563eb;--accent-l:#eff6ff;--accent-b:#bfdbfe;
+  --green:#16a34a;--green-l:#f0fdf4;--green-b:#bbf7d0;
+  --orange:#d97706;--orange-l:#fffbeb;--orange-b:#fde68a;
+  --red:#dc2626;--red-l:#fef2f2;--red-b:#fecaca;
+  --tp:#111827;--ts:#4b5563;--tm:#9ca3af;
+  --bg:#ffffff;--bg1:#f9fafb;--bd:#e5e7eb;--bds:#d1d5db;
+  --r:10px;--font:'Tajawal',system-ui,sans-serif
+}
+@media(prefers-color-scheme:dark){:root{
+  --accent:#60a5fa;--accent-l:#1e3a5f;--accent-b:#2563eb;
+  --green:#4ade80;--green-l:#052e16;--green-b:#166534;
+  --orange:#fbbf24;--orange-l:#1c1105;--orange-b:#92400e;
+  --red:#f87171;--red-l:#2d0a0a;--red-b:#991b1b;
+  --tp:#f9fafb;--ts:#d1d5db;--tm:#6b7280;
+  --bg:#1f2937;--bg1:#111827;--bd:#374151;--bds:#4b5563
+}}
+body{font-family:var(--font);background:var(--bg1);color:var(--tp);min-height:100vh;padding:1rem}
+.wrap{max-width:660px;margin:0 auto;background:var(--bg);border-radius:16px;border:1px solid var(--bd);overflow:hidden}
+.hero{background:linear-gradient(135deg,#1e40af 0%,#2563eb 100%);color:white;padding:2.5rem 2rem;text-align:center}
+.hero-icon{width:64px;height:64px;background:rgba(255,255,255,.15);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:32px}
+.hero h1{font-size:24px;font-weight:700;margin-bottom:.5rem}
+.hero p{font-size:15px;opacity:.85;line-height:1.7;max-width:420px;margin:0 auto}
+.prog-wrap{padding:1.25rem 2rem 0}
+.prog-track{height:6px;background:var(--bd);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .4s ease;width:16%}
+.prog-meta{display:flex;justify-content:space-between;margin-top:6px}
+.prog-meta span{font-size:12px;color:var(--tm)}
+.fbody{padding:1.75rem 2rem 2rem}
+.sec{display:none;animation:fi .25s ease}
+.sec.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sec-badge{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin-bottom:4px}
+.sec-title{font-size:20px;font-weight:700;color:var(--tp);margin-bottom:1.5rem}
+.field{margin-bottom:1.5rem}
+.lbl{font-size:14px;font-weight:500;color:var(--tp);margin-bottom:8px;display:block}
+.sub{font-size:13px;color:var(--tm);margin-bottom:8px;display:block;line-height:1.6}
+input[type=text],textarea{width:100%;border:1px solid var(--bds);border-radius:var(--r);padding:10px 14px;font-size:15px;font-family:var(--font);color:var(--tp);background:var(--bg);outline:none;direction:rtl;transition:border-color .15s,box-shadow .15s}
+input[type=text]:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-l)}
+textarea{resize:vertical;min-height:90px;line-height:1.6}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid var(--bds);border-radius:99px;padding:8px 16px;font-size:14px;cursor:pointer;background:var(--bg);color:var(--ts);transition:all .15s;font-family:var(--font)}
+.pill:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-l)}
+.pill.sel{border-color:var(--accent);background:var(--accent-l);color:var(--accent);font-weight:500}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:10px}
+.card{border:1px solid var(--bds);border-radius:12px;padding:1rem .75rem;cursor:pointer;background:var(--bg);transition:all .15s;text-align:center}
+.card:hover{border-color:var(--accent);background:var(--accent-l)}
+.card.sel{border:2px solid var(--accent);background:var(--accent-l)}
+.card i{font-size:26px;color:var(--tm);margin-bottom:8px;display:block}
+.card.sel i{color:var(--accent)}
+.card-lbl{font-size:13px;font-weight:500;color:var(--tp)}
+
+/* readiness rows */
+.rrows{display:flex;flex-direction:column;gap:10px}
+.rrow{border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;background:var(--bg1)}
+.rrow-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.rrow-icon{font-size:20px;color:var(--tm);flex-shrink:0;margin-top:1px}
+.rrow-info{}
+.rrow-q{font-size:14px;font-weight:500;color:var(--tp);line-height:1.4}
+.rrow-why{font-size:12px;color:var(--tm);margin-top:2px;line-height:1.5}
+.rrow-opts{display:flex;gap:6px;flex-wrap:wrap}
+.rbtn{border:1px solid var(--bds);border-radius:99px;padding:6px 16px;font-size:13px;cursor:pointer;background:var(--bg);color:var(--ts);font-family:var(--font);transition:all .15s}
+.rbtn:hover{border-color:var(--accent);color:var(--accent)}
+.rbtn.g{border-color:var(--green);background:var(--green-l);color:var(--green);font-weight:600}
+.rbtn.y{border-color:var(--orange);background:var(--orange-l);color:var(--orange);font-weight:600}
+.rbtn.r{border-color:var(--red);background:var(--red-l);color:var(--red);font-weight:600}
+
+.nav{display:flex;gap:10px;margin-top:2rem}
+.btn-n{flex:1;padding:13px;border-radius:var(--r);border:none;background:var(--accent);color:white;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--font);display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .15s,transform .1s}
+.btn-n:hover{opacity:.9}
+.btn-n:active{transform:scale(.98)}
+.btn-b{padding:13px 18px;border-radius:var(--r);border:1px solid var(--bds);background:var(--bg);color:var(--ts);font-size:15px;cursor:pointer;font-family:var(--font)}
+.btn-b:hover{background:var(--bg1)}
+
+/* Result */
+.axes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
+@media(max-width:480px){.axes{grid-template-columns:1fr}}
+.axis-card{border:1px solid var(--bd);border-radius:12px;padding:1rem;background:var(--bg1)}
+.axis-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.axis-icon{font-size:20px}
+.axis-name{font-size:13px;font-weight:600;color:var(--ts)}
+.axis-score-row{display:flex;align-items:center;gap:10px}
+.axis-dots{display:flex;gap:4px;flex:1}
+.dot{width:16px;height:16px;border-radius:99px;border:1.5px solid var(--bds);background:var(--bg);transition:all .4s}
+.dot.filled-g{background:var(--green);border-color:var(--green)}
+.dot.filled-y{background:var(--orange);border-color:var(--orange)}
+.dot.filled-r{background:var(--red);border-color:var(--red)}
+.axis-pct{font-size:13px;font-weight:600;color:var(--tm);min-width:32px;text-align:left}
+.axis-verdict{font-size:12px;color:var(--tm);margin-top:6px}
+
+.total-card{border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1.25rem;border:2px solid}
+.total-pct{font-size:52px;font-weight:700;line-height:1;margin-bottom:4px}
+.total-lbl{font-size:14px;opacity:.7;margin-bottom:1rem}
+.total-track{height:10px;border-radius:99px;overflow:hidden;margin-bottom:1rem;background:rgba(0,0,0,.08)}
+.total-fill{height:100%;border-radius:99px;transition:width .9s ease;width:0%}
+.total-verdict{font-size:15px;line-height:1.7;font-weight:500}
+
+.insights{display:flex;flex-direction:column;gap:10px;margin-bottom:1.25rem}
+.insight{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;background:var(--bg)}
+.insight i{font-size:18px;margin-top:1px;flex-shrink:0}
+.insight p{font-size:14px;color:var(--tp);line-height:1.6}
+.ins-str i{color:var(--green)}
+.ins-tip i{color:var(--accent)}
+.ins-warn i{color:var(--orange)}
+
+.fin-cta{background:var(--accent-l);border:1px solid var(--accent-b);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem}
+.fin-cta p:first-child{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.fin-cta p:last-child{font-size:14px;color:var(--tp);line-height:1.7}
+.copy-box{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;margin-bottom:10px;font-size:13px;color:var(--ts);line-height:1.7;white-space:pre-wrap;max-height:180px;overflow-y:auto;direction:rtl}
+.btn-copy{width:100%;padding:13px;border-radius:var(--r);border:1px solid var(--accent);background:var(--accent-l);color:var(--accent);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font);display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;transition:all .15s}
+.btn-copy:hover{background:var(--accent);color:white}
+.btn-restart{width:100%;padding:11px;border-radius:var(--r);border:1px solid var(--bds);background:var(--bg);color:var(--ts);font-size:14px;cursor:pointer;font-family:var(--font)}
+.btn-restart:hover{background:var(--bg1)}
+.score-wrap{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r);padding:1rem;margin-bottom:1.25rem}
+.score-wrap-title{font-size:13px;font-weight:600;color:var(--ts);margin-bottom:8px}
+
+.legend{display:flex;gap:14px;margin-bottom:1rem;font-size:12px;color:var(--tm);flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend-dot{width:10px;height:10px;border-radius:99px}
+
+@media(max-width:500px){
+  .hero{padding:2rem 1.25rem}
+  .fbody{padding:1.25rem 1rem 1.5rem}
+  .prog-wrap{padding:1rem 1rem 0}
+  .cards{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-icon"><i class="ti ti-rocket"></i></div>
+    <h1>خطة النمو لمشروعك</h1>
+    <p>أجب على الأسئلة وستحصل على تقييم شفاف لجاهزيتك — مقسّم على ٤ محاور واضحة مع توصيات عملية.</p>
+  </div>
+
+  <div class="prog-wrap">
+    <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
+    <div class="prog-meta"><span id="pt">القسم ١ من ٥</span><span id="pp">16%</span></div>
+  </div>
+
+  <div class="fbody">
+
+    <!-- S1 -->
+    <div class="sec on" id="s1">
+      <div class="sec-badge">القسم الأول</div>
+      <div class="sec-title">معلومات المشروع</div>
+      <div class="field">
+        <label class="lbl">اسم مشروعك</label>
+        <input type="text" id="f-name" placeholder="مثال: مشروع العسل الطبيعي">
+      </div>
+      <div class="field">
+        <label class="lbl">قطاع المشروع</label>
+        <div class="cards" id="f-sector">
+          <div class="card" data-v="منتجات غذائية"><i class="ti ti-salad"></i><div class="card-lbl">غذائي</div></div>
+          <div class="card" data-v="أزياء / هدايا"><i class="ti ti-shirt"></i><div class="card-lbl">أزياء / هدايا</div></div>
+          <div class="card" data-v="خدمات"><i class="ti ti-tools"></i><div class="card-lbl">خدمات</div></div>
+          <div class="card" data-v="تجارة إلكترونية"><i class="ti ti-shopping-cart"></i><div class="card-lbl">إلكتروني</div></div>
+          <div class="card" data-v="صناعة / إنتاج"><i class="ti ti-building-factory"></i><div class="card-lbl">صناعة</div></div>
+          <div class="card" data-v="تقنية"><i class="ti ti-device-laptop"></i><div class="card-lbl">تقنية</div></div>
+          <div class="card" data-v="تعليم / تدريب"><i class="ti ti-school"></i><div class="card-lbl">تعليم</div></div>
+          <div class="card" data-v="سياحة / ضيافة"><i class="ti ti-map-pin"></i><div class="card-lbl">سياحة</div></div>
+          <div class="card" data-v="غير ذلك"><i class="ti ti-dots"></i><div class="card-lbl">غير ذلك</div></div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">مرحلة المشروع الحالية</label>
+        <div class="pills" id="f-stage" data-s1="1">
+          <button class="pill" data-v="فكرة فقط">فكرة ولم أبدأ بعد</button>
+          <button class="pill" data-v="بدأنا البيع">بدأنا البيع بشكل بسيط</button>
+          <button class="pill" data-v="قائم ولدينا عملاء">قائم ولدينا عملاء</button>
+          <button class="pill" data-v="ينمو ويحتاج تنظيم">ينمو ونحتاج تنظيم</button>
+          <button class="pill" data-v="جاهز للتوسع">جاهز للتوسع</button>
+        </div>
+      </div>
+      <div class="nav">
+        <button class="btn-n" onclick="nx(1)">التالي <i class="ti ti-arrow-left"></i></button>
+      </div>
+    </div>
+
+    <!-- S2 -->
+    <div class="sec" id="s2">
+      <div class="sec-badge">القسم الثاني</div>
+      <div class="sec-title">هدف النمو</div>
+      <div class="field">
+        <label class="lbl">ما الذي تريد تطويره خلال ٣–٦ أشهر القادمة؟</label>
+        <div class="pills" id="f-growgoal">
+          <button class="pill" data-v="زيادة المبيعات">زيادة المبيعات</button>
+          <button class="pill" data-v="زيادة الإنتاج">زيادة الإنتاج</button>
+          <button class="pill" data-v="شراء معدات">شراء معدات</button>
+          <button class="pill" data-v="زيادة المخزون">زيادة المخزون</button>
+          <button class="pill" data-v="دخول موسم / فعالية">دخول موسم / فعالية</button>
+          <button class="pill" data-v="تنفيذ طلبية كبيرة">تنفيذ طلبية كبيرة</button>
+          <button class="pill" data-v="فتح فرع">فتح فرع / نقطة بيع</button>
+          <button class="pill" data-v="تحسين التسويق">تحسين التسويق</button>
+          <button class="pill" data-v="توظيف / تفويض">توظيف / تفويض</button>
+          <button class="pill" data-v="تنظيم العمليات">تنظيم العمليات</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">اشرح هدفك بجملة واحدة</label>
+        <span class="sub">مثال: "أريد زيادة الإنتاج لأن الطلب زاد ولا أستطيع تغطية كل الطلبات."</span>
+        <textarea id="f-goaltext" placeholder="اكتب هدفك هنا..."></textarea>
+      </div>
+      <div class="field">
+        <label class="lbl">لماذا الآن تحديداً؟</label>
+        <textarea id="f-whynow" placeholder="ما السياق أو الفرصة أو الضغط الذي يجعل هذه الخطوة مهمة الآن؟"></textarea>
+      </div>
+      <div class="nav">
+        <button class="btn-n" onclick="nx(2)">التالي <i class="ti ti-arrow-left"></i></button>
+        <button class="btn-b" onclick="bk(2)"><i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- S3 -->
+    <div class="sec" id="s3">
+      <div class="sec-badge">القسم الثالث</div>
+      <div class="sec-title">الاحتياج الفعلي</div>
+      <div class="field">
+        <label class="lbl">ما الذي تحتاجه لتحقيق هذا النمو؟</label>
+        <div class="pills" id="f-needs">
+          <button class="pill" data-v="تمويل">تمويل</button>
+          <button class="pill" data-v="معدات">معدات</button>
+          <button class="pill" data-v="مخزون">مخزون</button>
+          <button class="pill" data-v="تسويق">تسويق</button>
+          <button class="pill" data-v="مساحة / موقع">مساحة / موقع</button>
+          <button class="pill" data-v="موظفين">موظفين</button>
+          <button class="pill" data-v="موردين">موردين</button>
+          <button class="pill" data-v="تنظيم داخلي">تنظيم داخلي</button>
+          <button class="pill" data-v="استشارات">استشارات</button>
+          <button class="pill" data-v="شراكات">شراكات</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">إذا كان الاحتياج مالياً، ما الغرض الأساسي؟</label>
+        <div class="pills" id="f-finpurpose" data-s1="1">
+          <button class="pill" data-v="شراء معدات">شراء معدات</button>
+          <button class="pill" data-v="شراء مخزون">شراء مخزون</button>
+          <button class="pill" data-v="تغطية طلبية">تغطية طلبية كبيرة</button>
+          <button class="pill" data-v="تحسين التشغيل">تحسين التشغيل</button>
+          <button class="pill" data-v="توسعة المشروع">توسعة المشروع</button>
+          <button class="pill" data-v="تسويق ومبيعات">تسويق ومبيعات</button>
+          <button class="pill" data-v="فجوة تدفق نقدي">فجوة تدفق نقدي</button>
+          <button class="pill" data-v="لا يوجد احتياج مالي">لا يوجد احتياج مالي</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">المبلغ التقريبي المطلوب</label>
+        <div class="pills" id="f-amount" data-s1="1">
+          <button class="pill" data-v="أقل من 1000">أقل من ١,٠٠٠ ريال</button>
+          <button class="pill" data-v="1000–3000">١,٠٠٠ – ٣,٠٠٠ ريال</button>
+          <button class="pill" data-v="3000–5000">٣,٠٠٠ – ٥,٠٠٠ ريال</button>
+          <button class="pill" data-v="5000–10000">٥,٠٠٠ – ١٠,٠٠٠ ريال</button>
+          <button class="pill" data-v="أكثر من 10000">أكثر من ١٠,٠٠٠ ريال</button>
+          <button class="pill" data-v="غير متأكد">غير متأكد بعد</button>
+        </div>
+      </div>
+      <div class="nav">
+        <button class="btn-n" onclick="nx(3)">التالي <i class="ti ti-arrow-left"></i></button>
+        <button class="btn-b" onclick="bk(3)"><i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- S4: الجاهزية — ٤ محاور واضحة -->
+    <div class="sec" id="s4">
+      <div class="sec-badge">القسم الرابع</div>
+      <div class="sec-title">تقييم جاهزية مشروعك</div>
+
+      <div style="background:var(--accent-l);border:1px solid var(--accent-b);border-radius:10px;padding:12px 14px;margin-bottom:1.25rem;font-size:13px;color:var(--accent);line-height:1.6">
+        <i class="ti ti-info-circle"></i>
+        سيتم تقييم مشروعك على <strong>٤ محاور</strong>: المبيعات، التوثيق، وضوح الخطة، والتسويق. كل محور له ٣ درجات — وستعرف في النهاية وضعك في كل واحد بشكل مستقل.
+      </div>
+
+      <div class="legend">
+        <span><span class="legend-dot" style="background:var(--green)"></span>جاهز (٢ نقطة)</span>
+        <span><span class="legend-dot" style="background:var(--orange)"></span>جزئياً (١ نقطة)</span>
+        <span><span class="legend-dot" style="background:var(--red)"></span>يحتاج عمل (٠ نقطة)</span>
+      </div>
+
+      <div class="rrows">
+
+        <!-- محور ١: المبيعات -->
+        <div style="font-size:12px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;margin-top:.5rem;margin-bottom:4px">المحور الأول — المبيعات والطلب</div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-cash rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل لديك مبيعات حالية؟</div>
+              <div class="rrow-why">المبيعات تثبت أن هناك طلباً حقيقياً — بدونها خطوة النمو قد تكون مبكرة.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="sales" data-s="2" data-v="نعم مستمرة">نعم، بشكل منتظم</button>
+            <button class="rbtn" data-q="sales" data-s="1" data-v="متقطعة">أحياناً</button>
+            <button class="rbtn" data-q="sales" data-s="0" data-v="لا">لم أبدأ بعد</button>
+          </div>
+        </div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-users rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل لديك عملاء متكررون أو قاعدة عملاء؟</div>
+              <div class="rrow-why">العميل المتكرر = دليل على رضا وثقة — يقوّي موقفك عند طلب أي دعم.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="repeat" data-s="2" data-v="نعم">نعم، عندي عملاء ثابتون</button>
+            <button class="rbtn" data-q="repeat" data-s="1" data-v="بعض">بعضهم</button>
+            <button class="rbtn" data-q="repeat" data-s="0" data-v="لا">لا بعد</button>
+          </div>
+        </div>
+
+        <!-- محور ٢: التوثيق -->
+        <div style="font-size:12px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;margin-top:.75rem;margin-bottom:4px">المحور الثاني — التوثيق والتنظيم</div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-file-description rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل تسجّل مبيعاتك وطلباتك؟</div>
+              <div class="rrow-why">السجل يساعدك تحلل أداءك وتثبت جدية مشروعك لأي شريك أو ممول.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="records" data-s="2" data-v="نعم">نعم، بانتظام</button>
+            <button class="rbtn" data-q="records" data-s="1" data-v="جزئياً">بعض الأحيان</button>
+            <button class="rbtn" data-q="records" data-s="0" data-v="لا">لا أسجّل</button>
+          </div>
+        </div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-list-check rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل لديك قائمة واضحة بالمنتجات / الخدمات والأسعار؟</div>
+              <div class="rrow-why">القائمة الواضحة تعكس احترافية المشروع وتسهّل البيع والتفاوض.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="pricelist" data-s="2" data-v="نعم">نعم، واضحة</button>
+            <button class="rbtn" data-q="pricelist" data-s="1" data-v="جزئياً">تقريبية</button>
+            <button class="rbtn" data-q="pricelist" data-s="0" data-v="لا">لا</button>
+          </div>
+        </div>
+
+        <!-- محور ٣: وضوح الخطة -->
+        <div style="font-size:12px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;margin-top:.75rem;margin-bottom:4px">المحور الثالث — وضوح الخطة والهدف</div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-target rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل تعرف بالضبط كيف ستستخدم التمويل أو الموارد؟</div>
+              <div class="rrow-why">الخطة الواضحة تقلل المخاطر وتجعل قرار التمويل أسرع وأسهل.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="clarity" data-s="2" data-v="واضح">نعم، واضح جداً</button>
+            <button class="rbtn" data-q="clarity" data-s="1" data-v="فكرة عامة">عندي فكرة عامة</button>
+            <button class="rbtn" data-q="clarity" data-s="0" data-v="غير واضح">لم أفكر بالتفصيل بعد</button>
+          </div>
+        </div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-calculator rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل تعرف تكاليف تشغيل مشروعك الشهرية؟</div>
+              <div class="rrow-why">معرفة التكاليف = معرفة نقطة الربح — أساس أي قرار مالي سليم.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="costs" data-s="2" data-v="نعم">نعم، أعرفها</button>
+            <button class="rbtn" data-q="costs" data-s="1" data-v="تقريباً">تقريباً</button>
+            <button class="rbtn" data-q="costs" data-s="0" data-v="لا">لا أعرف</button>
+          </div>
+        </div>
+
+        <!-- محور ٤: التسويق والحضور -->
+        <div style="font-size:12px;font-weight:700;color:var(--tm);text-transform:uppercase;letter-spacing:.06em;margin-top:.75rem;margin-bottom:4px">المحور الرابع — التسويق والحضور</div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-id-badge rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل لديك ملف تعريفي أو نبذة عن المشروع؟</div>
+              <div class="rrow-why">الملف التعريفي يختصر وقتك ويعكس احترافيتك في أي اجتماع أو شراكة.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="profile" data-s="2" data-v="نعم">نعم، جاهز</button>
+            <button class="rbtn" data-q="profile" data-s="1" data-v="يحتاج تحديث">يحتاج تحديث</button>
+            <button class="rbtn" data-q="profile" data-s="0" data-v="لا">لا يوجد</button>
+          </div>
+        </div>
+
+        <div class="rrow">
+          <div class="rrow-top">
+            <i class="ti ti-brand-instagram rrow-icon"></i>
+            <div class="rrow-info">
+              <div class="rrow-q">هل لديك حضور رقمي (حساب نشط / موقع)؟</div>
+              <div class="rrow-why">الحضور الرقمي يبني الثقة ويجلب عملاء جدد بتكلفة أقل.</div>
+            </div>
+          </div>
+          <div class="rrow-opts">
+            <button class="rbtn" data-q="digital" data-s="2" data-v="نشط">نعم، نشط</button>
+            <button class="rbtn" data-q="digital" data-s="1" data-v="موجود لكن غير نشط">موجود لكن ضعيف</button>
+            <button class="rbtn" data-q="digital" data-s="0" data-v="لا">لا يوجد</button>
+          </div>
+        </div>
+
+      </div><!-- end rrows -->
+
+      <div class="nav">
+        <button class="btn-n" onclick="nx(4)">التالي <i class="ti ti-arrow-left"></i></button>
+        <button class="btn-b" onclick="bk(4)"><i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- S5 -->
+    <div class="sec" id="s5">
+      <div class="sec-badge">القسم الخامس</div>
+      <div class="sec-title">التوقعات والتحديات</div>
+      <div class="field">
+        <label class="lbl">إذا تحققت خطوة النمو، ما النتيجة التي تتوقعها؟</label>
+        <div class="pills" id="f-outcomes">
+          <button class="pill" data-v="زيادة المبيعات">زيادة المبيعات</button>
+          <button class="pill" data-v="تقليل وقت الإنتاج">تقليل وقت الإنتاج</button>
+          <button class="pill" data-v="تحسين جودة الخدمة">تحسين جودة الخدمة</button>
+          <button class="pill" data-v="تلبية طلبات أكثر">تلبية طلبات أكثر</button>
+          <button class="pill" data-v="دخول سوق جديد">دخول سوق جديد</button>
+          <button class="pill" data-v="زيادة الأرباح">زيادة الأرباح</button>
+          <button class="pill" data-v="تنظيم العمل">تنظيم العمل</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">كيف ستعرف أن الخطوة نجحت؟</label>
+        <span class="sub">مثال: "إذا قدرت أستقبل ٣٠ طلب إضافي في الشهر بدون تأخير."</span>
+        <textarea id="f-success" placeholder="حدد مقياس النجاح بوضوح..."></textarea>
+      </div>
+      <div class="field">
+        <label class="lbl">ما أكبر تحدٍّ يمنعك الآن؟</label>
+        <div class="pills" id="f-challenges">
+          <button class="pill" data-v="عدم توفر التمويل">عدم توفر التمويل</button>
+          <button class="pill" data-v="عدم وضوح الخطة">عدم وضوح الخطة</button>
+          <button class="pill" data-v="ضعف المبيعات">ضعف المبيعات</button>
+          <button class="pill" data-v="صعوبة الموردين">صعوبة الموردين</button>
+          <button class="pill" data-v="نقص الوقت">نقص الوقت</button>
+          <button class="pill" data-v="نقص الخبرة">نقص الخبرة</button>
+          <button class="pill" data-v="الخوف من الالتزام المالي">الخوف من الالتزام المالي</button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="lbl">أي ملاحظة إضافية؟ (اختياري)</label>
+        <textarea id="f-notes" placeholder="أي شيء تريد مشاركته..."></textarea>
+      </div>
+      <div class="nav">
+        <button class="btn-n" onclick="nx(5)" style="background:var(--green)"><i class="ti ti-chart-bar"></i> عرض تقييمي</button>
+        <button class="btn-b" onclick="bk(5)"><i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- S6: النتيجة -->
+    <div class="sec" id="s6">
+      <div class="sec-badge">تقييمك الشخصي</div>
+      <div class="sec-title">نتيجة جاهزية مشروعك</div>
+
+      <!-- الدرجة الكلية -->
+      <div class="total-card" id="tc">
+        <div class="total-pct" id="tc-pct">—</div>
+        <div class="total-lbl">مستوى الجاهزية الإجمالية</div>
+        <div class="total-track"><div class="total-fill" id="tc-fill"></div></div>
+        <div class="total-verdict" id="tc-verdict"></div>
+      </div>
+
+      <!-- المحاور الأربعة -->
+      <p style="font-size:13px;font-weight:600;color:var(--ts);margin-bottom:10px">تفصيل النتيجة على ٤ محاور:</p>
+      <div class="axes" id="axes-wrap"></div>
+
+      <!-- الرؤى -->
+      <div class="insights" id="ins-wrap"></div>
+
+      <!-- CTA -->
+      <div class="fin-cta">
+        <p><i class="ti ti-shield-check"></i> حلول مالية متوافقة مع الشريعة الإسلامية</p>
+        <p>إذا كان مشروعك جاهزاً وتبحث عن حل مالي مناسب، يمكنك الاطلاع على الحلول المالية المتوافقة مع الشريعة الإسلامية المتاحة أو التواصل للاستفسار.</p>
+      </div>
+
+      <!-- الملخص للمشاركة -->
+      <div class="score-wrap">
+        <div class="score-wrap-title">ملخص نتيجتك — انسخه وشاركه:</div>
+        <div class="copy-box" id="sum-box"></div>
+        <button class="btn-copy" onclick="doCopy()"><i class="ti ti-copy"></i> <span id="clbl">نسخ الملخص</span></button>
+        <button class="btn-restart" onclick="restart()"><i class="ti ti-refresh"></i> إعادة التعبئة</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var A={}, RS={}, cur=1;
+var PW=['16%','33%','50%','67%','83%','100%'];
+var PT=['القسم ١ من ٥','القسم ٢ من ٥','القسم ٣ من ٥','القسم ٤ من ٥','القسم ٥ من ٥','النتيجة'];
+var PP=['16%','33%','50%','67%','83%','100%'];
+
+// ٤ محاور: كل محور = سؤالان، كل سؤال max 2 نقطة، محور max 4 نقطة
+var AXES = [
+  { id:'sales_axis',   label:'المبيعات والطلب',   icon:'ti-cash',           qs:['sales','repeat'],    max:4 },
+  { id:'docs_axis',    label:'التوثيق والتنظيم',  icon:'ti-file-description',qs:['records','pricelist'],max:4 },
+  { id:'plan_axis',    label:'وضوح الخطة',         icon:'ti-target',          qs:['clarity','costs'],    max:4 },
+  { id:'mkt_axis',     label:'التسويق والحضور',   icon:'ti-brand-instagram', qs:['profile','digital'],  max:4 }
+];
+
+function nx(n){col(n);var t=n+1;if(t===6)buildResult();show(t)}
+function bk(n){show(n-1)}
+function show(n){
+  for(var i=1;i<=6;i++){var e=document.getElementById('s'+i);if(e)e.classList.toggle('on',i===n)}
+  document.getElementById('pf').style.width=PW[n-1];
+  document.getElementById('pt').textContent=PT[n-1];
+  document.getElementById('pp').textContent=PP[n-1];
+  cur=n; window.scrollTo&&window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function col(n){
+  if(n===1){A.name=(document.getElementById('f-name').value||'').trim();A.sector=gs('f-sector',1);A.stage=gs('f-stage',1)}
+  else if(n===2){A.growgoal=gs('f-growgoal',0);A.goaltext=document.getElementById('f-goaltext').value.trim();A.whynow=document.getElementById('f-whynow').value.trim()}
+  else if(n===3){A.needs=gs('f-needs',0);A.finpurpose=gs('f-finpurpose',1);A.amount=gs('f-amount',1)}
+  else if(n===4){
+    document.querySelectorAll('.rbtn.g,.rbtn.y,.rbtn.r').forEach(function(b){
+      RS[b.getAttribute('data-q')]=parseInt(b.getAttribute('data-s')||0);
+      A['r_'+b.getAttribute('data-q')]=b.getAttribute('data-v');
+    });
+  }
+  else if(n===5){A.outcomes=gs('f-outcomes',0);A.success=document.getElementById('f-success').value.trim();A.challenges=gs('f-challenges',0);A.notes=document.getElementById('f-notes').value.trim()}
+}
+
+function gs(id,single){
+  var c=document.getElementById(id);if(!c)return'';
+  var els=Array.from(c.querySelectorAll('.sel'));
+  var vals=els.map(function(e){return e.getAttribute('data-v')||e.textContent.trim()});
+  return single?(vals[0]||''):vals.join('، ');
+}
+
+function buildResult(){
+  // حساب كل محور
+  var axisResults=[];
+  var totalScore=0, totalMax=0;
+  AXES.forEach(function(ax){
+    var s=0,m=ax.max;
+    ax.qs.forEach(function(q){s+=(RS[q]||0)});
+    totalScore+=s; totalMax+=m;
+    axisResults.push({label:ax.label,icon:ax.icon,score:s,max:m,pct:Math.round(s/m*100)});
+  });
+
+  var pct=Math.round(totalScore/totalMax*100);
+
+  // الدرجة الكلية
+  var color,bg,verdict,emoji;
+  if(pct>=80){color=getCS('green');bg=getCS('green-l');verdict='مشروعك في جاهزية ممتازة. لديك الأساسيات المطلوبة للتقدم بثقة نحو خطوة النمو وفرص التمويل.';emoji='🌟'}
+  else if(pct>=60){color=getCS('accent');bg=getCS('accent-l');verdict='مشروعك في مسار جيد. بعض المحاور تحتاج تعزيزاً — لكن يمكنك تنفيذ خطوات النمو الأساسية الآن وتحسين الباقي أثناء المسير.';emoji='👍'}
+  else if(pct>=35){color=getCS('orange');bg=getCS('orange-l');verdict='لديك نية واضحة للنمو — هذا رائع. المرحلة التالية هي تقوية المحاور الضعيفة أولاً قبل التوسع، حتى يكون النمو على أساس متين.';emoji='⚡'}
+  else{color=getCS('red');bg=getCS('red-l');verdict='أنت في مرحلة البناء — وهذه بداية كل مشروع ناجح. ركّز الآن على المبيعات الأولى والتوثيق قبل أي خطوة توسع.';emoji='🌱'}
+
+  var tc=document.getElementById('tc');
+  tc.style.background=bg; tc.style.borderColor=color;
+  document.getElementById('tc-pct').textContent=emoji+' '+pct+'%';
+  document.getElementById('tc-pct').style.color=color;
+  setTimeout(function(){document.getElementById('tc-fill').style.width=pct+'%';document.getElementById('tc-fill').style.background=color},120);
+  document.getElementById('tc-verdict').textContent=verdict;
+
+  // المحاور
+  var wrap=document.getElementById('axes-wrap');wrap.innerHTML='';
+  axisResults.forEach(function(ax){
+    var c2=ax.pct>=75?'green':ax.pct>=50?'orange':'red';
+    var dotClass='filled-'+c2;
+    var dots='';
+    for(var d=0;d<ax.max/2;d++){dots+='<div class="dot '+(d<ax.score/2?dotClass:'')+'"></div>'}
+    var vrd=ax.pct>=75?'جاهز ✓':ax.pct>=50?'جزئياً':'يحتاج تطوير';
+    wrap.innerHTML+='<div class="axis-card"><div class="axis-head"><i class="ti '+ax.icon+' axis-icon" style="color:var(--'+c2+')"></i><span class="axis-name">'+ax.label+'</span></div><div class="axis-score-row"><div class="axis-dots">'+dots+'</div><span class="axis-pct" style="color:var(--'+c2+')">'+ax.pct+'%</span></div><div class="axis-verdict" style="color:var(--'+c2+')">'+vrd+'</div></div>';
+  });
+
+  // الرؤى المخصصة
+  buildInsights(axisResults,pct);
+  buildSummary(pct,emoji+' '+pct+'%',axisResults);
+}
+
+function getCS(n){
+  return getComputedStyle(document.documentElement).getPropertyValue('--'+n).trim();
+}
+
+function buildInsights(axisResults,pct){
+  var w=document.getElementById('ins-wrap');w.innerHTML='';
+  var items=[];
+
+  // مبيعات
+  var s=axisResults[0];
+  if(s.pct>=75)items.push({c:'ins-str',i:'ti-circle-check',t:'مبيعاتك الحالية مؤشر قوي على وجود طلب حقيقي — هذا أهم شرط لأي خطوة نمو ناجحة.'});
+  else if(s.pct>=50)items.push({c:'ins-warn',i:'ti-alert-triangle',t:'مبيعاتك موجودة لكن متقطعة — ركّز على بناء تدفق منتظم من الطلبات قبل التوسع.'});
+  else items.push({c:'ins-warn',i:'ti-alert-triangle',t:'المبيعات لا تزال محدودة — الأولوية هي إثبات الطلب أولاً. حتى ١٠ طلبات شهرياً ثابتة تفرق كثيراً.'});
+
+  // توثيق
+  var d=axisResults[1];
+  if(d.pct>=75)items.push({c:'ins-str',i:'ti-circle-check',t:'توثيقك منظم — هذا يسرّع أي قرار تمويل أو شراكة ويجعلك محل ثقة.'});
+  else items.push({c:'ins-tip',i:'ti-bulb',t:'ابدأ بتسجيل مبيعاتك في جدول بسيط وأعدّ قائمة أسعار واضحة — هاتان الخطوتان تغيّران صورة مشروعك كاملاً.'});
+
+  // وضوح الخطة
+  var p=axisResults[2];
+  if(p.pct>=75)items.push({c:'ins-str',i:'ti-circle-check',t:'خطتك واضحة وتعرف تكاليفك — هذا يعني أنك تتحكم في مشروعك وليس العكس.'});
+  else items.push({c:'ins-tip',i:'ti-bulb',t:'اجلس ٣٠ دقيقة واحسب: ما تكاليفك الشهرية؟ وكيف ستصرف المبلغ المطلوب بالضبط؟ هذا سيوضح كثيراً.'});
+
+  // تسويق
+  var m=axisResults[3];
+  if(m.pct>=75)items.push({c:'ins-str',i:'ti-circle-check',t:'حضورك الرقمي وملفك التعريفي يبنيان الثقة ويجلبان فرصاً بدون جهد يومي مستمر.'});
+  else items.push({c:'ins-tip',i:'ti-bulb',t:'ابدأ بملف تعريفي بسيط في صفحة واحدة + حساب نشط على منصة واحدة — هذا يكفي في البداية.'});
+
+  items.slice(0,3).forEach(function(item){
+    var div=document.createElement('div');
+    div.className='insight '+item.c;
+    div.innerHTML='<i class="ti '+item.i+'"></i><p>'+item.t+'</p>';
+    w.appendChild(div);
+  });
+}
+
+function buildSummary(pct,lvl,axisResults){
+  var lines=[];
+  lines.push('📋 نموذج خطة النمو — ملخص التقييم');
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━');
+  if(A.name)lines.push('🏷️  المشروع: '+A.name);
+  if(A.sector)lines.push('📂 القطاع: '+A.sector);
+  if(A.stage)lines.push('📍 المرحلة: '+A.stage);
+  lines.push('');
+  if(A.growgoal)lines.push('🎯 هدف النمو: '+A.growgoal);
+  if(A.goaltext)lines.push('💬 '+A.goaltext);
+  if(A.needs)lines.push('🔧 الاحتياج: '+A.needs);
+  if(A.amount)lines.push('💰 المبلغ: '+A.amount);
+  lines.push('');
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━');
+  lines.push('⭐ الجاهزية الإجمالية: '+lvl);
+  lines.push('');
+  lines.push('تفصيل المحاور الأربعة:');
+  axisResults.forEach(function(ax){
+    var icon=ax.pct>=75?'✅':ax.pct>=50?'🟡':'🔴';
+    lines.push(icon+' '+ax.label+': '+ax.pct+'%');
+  });
+  if(A.challenges){lines.push('');lines.push('🚧 أكبر تحدٍّ: '+A.challenges)}
+  if(A.outcomes){lines.push('🎁 النتيجة المتوقعة: '+A.outcomes)}
+  lines.push('━━━━━━━━━━━━━━━━━━━━━━');
+  document.getElementById('sum-box').textContent=lines.join('\n');
+}
+
+function doCopy(){
+  var txt=document.getElementById('sum-box').textContent;
+  var lbl=document.getElementById('clbl');
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){lbl.textContent='تم النسخ ✓';setTimeout(function(){lbl.textContent='نسخ الملخص'},2500)});
+  } else {
+    var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    lbl.textContent='تم النسخ ✓';setTimeout(function(){lbl.textContent='نسخ الملخص'},2500);
+  }
+}
+
+function restart(){
+  A={}; RS={};
+  document.querySelectorAll('.pill.sel,.card.sel').forEach(function(e){e.classList.remove('sel')});
+  document.querySelectorAll('.rbtn').forEach(function(e){e.classList.remove('g','y','r')});
+  ['f-name','f-goaltext','f-whynow','f-success','f-notes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
+  document.getElementById('tc-fill').style.width='0%';
+  show(1);
+}
+
+document.addEventListener('click',function(e){
+  var card=e.target.closest('.card');
+  if(card){card.parentElement.querySelectorAll('.card').forEach(function(c){c.classList.remove('sel')});card.classList.add('sel');return}
+  var pill=e.target.closest('.pill');
+  if(pill){var pc=pill.parentElement;if(pc.getAttribute('data-s1')==='1')pc.querySelectorAll('.pill').forEach(function(p){p.classList.remove('sel')});pill.classList.toggle('sel');return}
+  var rb=e.target.closest('.rbtn');
+  if(rb){
+    var q=rb.getAttribute('data-q');var s=parseInt(rb.getAttribute('data-s')||0);
+    document.querySelectorAll('[data-q="'+q+'"]').forEach(function(b){b.classList.remove('g','y','r')});
+    rb.classList.add(s>=2?'g':s===1?'y':'r');
+  }
+});
+</script>
+</body>
+</html>
